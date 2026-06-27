@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oneex Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>Oneex</h2>
+        <span>Analytics</span>
+    </div>
+
+    <nav>
+
+        <button class="menu-btn active">
+            📊 Dashboard
+        </button>
+
+        <button class="menu-btn">
+            📝 Fechamento
+        </button>
+
+        <button class="menu-btn">
+            📦 Produtos
+        </button>
+
+        <button class="menu-btn">
+            🏆 Ranking
+        </button>
+
+        <button class="menu-btn">
+            📅 Histórico
+        </button>
+
+        <button class="menu-btn">
+            ⚙️ Configurações
+        </button>
+
+    </nav>
+
+</div>
+
+<main>
+
+    <header>
+
+        <div>
+
+            <h1>Dashboard</h1>
+
+            <p id="welcome">
+                Bem-vindo ao seu Centro de Controle.
+            </p>
+
+        </div>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card">
+            <span>💰 Receita Hoje</span>
+            <h2 id="receitaHoje">R$ 0,00</h2>
+        </div>
+
+        <div class="card">
+            <span>🛒 Pedidos</span>
+            <h2 id="pedidosHoje">0</h2>
+        </div>
+
+        <div class="card">
+            <span>📦 Produtos Vendidos</span>
+            <h2 id="produtosHoje">0</h2>
+        </div>
+
+        <div class="card">
+            <span>🎯 Meta</span>
+            <h2 id="metaHoje">0%</h2>
+        </div>
+
+    </section>
+
+    <section class="charts">
+
+        <div class="chart-card">
+
+            <h3>Receita dos Últimos Dias</h3>
+
+            <canvas id="salesChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>Distribuição da Receita</h3>
+
+            <canvas id="platformChart"></canvas>
+
+        </div>
+
+    </section>
+
+    <section class="bottom">
+
+        <div class="card champion">
+
+            <h3>🏆 Produto Campeão</h3>
+
+            <img src="assets/products/default.png" id="championImage">
+
+            <h2 id="championName">Nenhum produto</h2>
+
+            <p id="championSales">0 vendas</p>
+
+        </div>
+
+        <div class="card insights">
+
+            <h3>🤖 Insights</h3>
+
+            <div id="insights">
+
+                Nenhum dado disponível.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+
+  </html>
