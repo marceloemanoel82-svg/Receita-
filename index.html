@@ -1,153 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Oneex Analytics</title>
-
-    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<div class="sidebar">
+    <aside class="sidebar">
 
-    <div class="logo">
-        <h2>Oneex</h2>
-        <span>Analytics</span>
-    </div>
-
-    <nav>
-
-        <button class="menu-btn active">
-            📊 Dashboard
-        </button>
-
-        <button class="menu-btn">
-            📝 Fechamento
-        </button>
-
-        <button class="menu-btn">
-            📦 Produtos
-        </button>
-
-        <button class="menu-btn">
-            🏆 Ranking
-        </button>
-
-        <button class="menu-btn">
-            📅 Histórico
-        </button>
-
-        <button class="menu-btn">
-            ⚙️ Configurações
-        </button>
-
-    </nav>
-
-</div>
-
-<main>
-
-    <header>
-
-        <div>
-
-            <h1>Dashboard</h1>
-
-            <p id="welcome">
-                Bem-vindo ao seu Centro de Controle.
-            </p>
-
+        <div class="logo">
+            <h2>ONEEX</h2>
+            <span>Analytics</span>
         </div>
 
-    </header>
+        <nav>
 
-    <section class="cards">
+            <button class="menu-btn active" data-page="dashboard-page">
+                📊 Dashboard
+            </button>
 
-        <div class="card">
-            <span>💰 Receita Hoje</span>
-            <h2 id="receitaHoje">R$ 0,00</h2>
-        </div>
+            <button class="menu-btn" data-page="products-page">
+                📦 Produtos
+            </button>
 
-        <div class="card">
-            <span>🛒 Pedidos</span>
-            <h2 id="pedidosHoje">0</h2>
-        </div>
+            <button class="menu-btn" data-page="sales-page">
+                📝 Fechamento
+            </button>
 
-        <div class="card">
-            <span>📦 Produtos Vendidos</span>
-            <h2 id="produtosHoje">0</h2>
-        </div>
+            <button class="menu-btn" data-page="ranking-page">
+                🏆 Ranking
+            </button>
 
-        <div class="card">
-            <span>🎯 Meta</span>
-            <h2 id="metaHoje">0%</h2>
-        </div>
+            <button class="menu-btn" data-page="history-page">
+                📅 Histórico
+            </button>
 
-    </section>
+            <button class="menu-btn" data-page="settings-page">
+                ⚙️ Configurações
+            </button>
 
-    <section class="charts">
+        </nav>
 
-        <div class="chart-card">
+    </aside>
 
-            <h3>Receita dos Últimos Dias</h3>
+    <main>
 
-            <canvas id="salesChart"></canvas>
+        <!-- DASHBOARD -->
 
-        </div>
+        <section id="dashboard-page" class="page active-page">
 
-        <div class="chart-card">
+            <header>
 
-            <h3>Distribuição da Receita</h3>
+                <h1>Dashboard</h1>
 
-            <canvas id="platformChart"></canvas>
+                <p id="welcome"></p>
 
-        </div>
+            </header>
 
-    </section>
+            <div class="cards">
 
-    <section class="bottom">
+                <div class="card">
 
-        <div class="card champion">
+                    <span>Receita Hoje</span>
 
-            <h3>🏆 Produto Campeão</h3>
+                    <h2 id="receitaHoje">R$ 0,00</h2>
 
-            <img src="assets/products/default.png" id="championImage">
+                </div>
 
-            <h2 id="championName">Nenhum produto</h2>
+                <div class="card">
 
-            <p id="championSales">0 vendas</p>
+                    <span>Pedidos</span>
 
-        </div>
+                    <h2 id="pedidosHoje">0</h2>
 
-        <div class="card insights">
+                </div>
 
-            <h3>🤖 Insights</h3>
+                <div class="card">
 
-            <div id="insights">
+                    <span>Produtos Vendidos</span>
 
-                Nenhum dado disponível.
+                    <h2 id="produtosHoje">0</h2>
+
+                </div>
+
+                <div class="card">
+
+                    <span>Meta</span>
+
+                    <h2 id="metaHoje">0%</h2>
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="charts">
 
-    </section>
+                <div class="chart-card">
 
-</main>
+                    <h3>Receita dos últimos dias</h3>
 
-<script src="script.js"></script>
+                    <canvas id="salesChart"></canvas>
+
+                </div>
+
+                <div class="chart-card">
+
+                    <h3>Distribuição da Receita</h3>
+
+                    <canvas id="platformChart"></canvas>
+
+                </div>
+
+            </div>
+
+            <div class="bottom">
+
+                <div class="chart-card champion">
+
+                    <h3>🏆 Produto Campeão</h3>
+
+                    <img id="championImage" src="https://placehold.co/300x300" alt="Produto">
+
+                    <h2 id="championName">-</h2>
+
+                    <p id="championSales">0 vendas</p>
+
+                </div>
+
+                <div class="chart-card">
+
+                    <h3>Insights</h3>
+
+                    <div id="insights"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUTOS -->
+
+        <section id="products-page" class="page">
+
+            <h1>📦 Produtos</h1>
+
+            <div class="coming">
+
+                <h2>Módulo em desenvolvimento</h2>
+
+                <p>Será o primeiro módulo funcional.</p>
+
+            </div>
+
+        </section>
+
+        <!-- FECHAMENTO -->
+
+        <section id="sales-page" class="page">
+
+            <h1>📝 Fechamento do Dia</h1>
+
+            <div class="coming">
+
+                <h2>Em desenvolvimento</h2>
+
+            </div>
+
+        </section>
+
+        <!-- RANKING -->
+
+        <section id="ranking-page" class="page">
+
+            <h1>🏆 Ranking</h1>
+
+            <div class="coming">
+
+                <h2>Em desenvolvimento</h2>
+
+            </div>
+
+        </section>
+
+        <!-- HISTÓRICO -->
+
+        <section id="history-page" class="page">
+
+            <h1>📅 Histórico</h1>
+
+            <div class="coming">
+
+                <h2>Em desenvolvimento</h2>
+
+            </div>
+
+        </section>
+
+        <!-- CONFIGURAÇÕES -->
+
+        <section id="settings-page" class="page">
+
+            <h1>⚙️ Configurações</h1>
+
+            <div class="coming">
+
+                <h2>Em desenvolvimento</h2>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
-
-  </html>
+                </html>
